@@ -10,13 +10,30 @@
   "scripts": {
     "clean": "del ./build/*",
     "build": "yarn clean && tsc",
-    "publish": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish"
+    "publish": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish",
+    "lint": "eslint --fix './src/**/*.ts'",
+    "format": "prettier --write 'src/**/*.ts'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
     "del-cli": "^3.0.1",
+    "eslint": "^7.4.0",
+    "eslint-config": "^0.3.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5",
     "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "@types/cookie-session": "^2.0.41",
+    "@types/express": "^4.17.7",
+    "@types/jsonwebtoken": "^8.5.0",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0",
+    "jsonwebtoken": "^8.5.1"
   }
 }
